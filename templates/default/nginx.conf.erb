@@ -91,4 +91,10 @@ http {
   <% end -%>
   include <%= node['nginx']['dir'] %>/conf.d/*.conf;
   include <%= node['nginx']['dir'] %>/sites-enabled/*;
+
+  map $remote_addr $striped_remote_addr {
+    default $remote_addr;
+    ~^::ffff:(?P<ip>.*)$ $ip;
+  }
+
 }
