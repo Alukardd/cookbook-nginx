@@ -143,6 +143,14 @@ Rate Limiting
 - `node['nginx']['gzip_min_length']` - used for config value of `gzip_min_length`.
 - `node['nginx']['gzip_disable']` - used for config value of `gzip_disable`.
 
+### SSL module
+
+- `node['nginx']['ssl_protocols']` - which ssl protocols will be used to encrypt connection.
+
+### maps module
+
+- `node['nginx']['maps']` - specify maps.
+
 ### Attributes set in recipes
 
 #### nginx::source

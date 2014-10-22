@@ -84,6 +84,7 @@ default['nginx']['gzip_types'] = %w(
 )
 default['nginx']['gzip_min_length']   = 1_000
 default['nginx']['gzip_disable']      = 'MSIE [1-6]\.'
+default['nginx']['ssl_protocols']     = nil
 
 default['nginx']['keepalive']            = 'on'
 default['nginx']['keepalive_timeout']    = 65
