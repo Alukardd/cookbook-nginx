@@ -105,4 +105,18 @@ http {
   }
     <% end -%>
   <% end -%>
+
+  <% node['nginx']['reject_unknown_hosts'].each_value do |value| -%>
+  server {
+    listen <%= value['listen'] %> default_server;
+    server_name "";
+    <% if value['ssl'] -%>
+    ssl on;
+    ssl_certificate <%= value['ssl_certificate'] %>;
+    ssl_certificate_key <%= value['ssl_certificate_key'] %>;
+    <% end -%>
+    return <%= value['return_code'] %>;
+  }
+
+  <% end -%>
 }
